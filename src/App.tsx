@@ -8,24 +8,36 @@ function App() {
   return (
     <div className="min-h-screen bg-light">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white bg-opacity-90 backdrop-blur-sm shadow-sm">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="flex items-center">
-            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=cute%20cartoon%20cat%20logo%20for%20diary%20app&image_size=square" alt="毛球日记" className="h-10 w-10 rounded-full" />
-            <h1 className="ml-3 text-2xl font-bold gradient-text">毛球日记</h1>
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white bg-opacity-95 backdrop-blur-md shadow-md">
+        <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+          <div className="flex items-center space-x-3">
+            <img src="https://neeko-copilot.bytedance.net/api/text2image?prompt=cute%20cartoon%20cat%20logo%20for%20diary%20app&size=512x512" alt="毛球日记" className="h-10 w-10 rounded-full object-cover" />
+            <h1 className="text-2xl font-bold gradient-text">毛球日记</h1>
           </div>
           
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
-            <a href="#home" className="text-dark hover:text-primary font-medium">首页</a>
-            <a href="#features" className="text-dark hover:text-primary font-medium">功能</a>
-            <a href="#download" className="text-dark hover:text-primary font-medium">下载</a>
-            <a href="#about" className="text-dark hover:text-primary font-medium">关于我们</a>
+            <a href="#home" className="text-dark hover:text-primary font-medium transition-all duration-300 relative group">
+              首页
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a href="#features" className="text-dark hover:text-primary font-medium transition-all duration-300 relative group">
+              功能
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a href="#download" className="text-dark hover:text-primary font-medium transition-all duration-300 relative group">
+              下载
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a href="#about" className="text-dark hover:text-primary font-medium transition-all duration-300 relative group">
+              关于我们
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+            </a>
           </div>
           
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden text-dark"
+            className="md:hidden text-dark p-2 rounded-full hover:bg-gray-100 transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? (
@@ -42,12 +54,12 @@ function App() {
         
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden bg-white shadow-md">
-            <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-              <a href="#home" className="text-dark hover:text-primary font-medium py-2" onClick={() => setIsMenuOpen(false)}>首页</a>
-              <a href="#features" className="text-dark hover:text-primary font-medium py-2" onClick={() => setIsMenuOpen(false)}>功能</a>
-              <a href="#download" className="text-dark hover:text-primary font-medium py-2" onClick={() => setIsMenuOpen(false)}>下载</a>
-              <a href="#about" className="text-dark hover:text-primary font-medium py-2" onClick={() => setIsMenuOpen(false)}>关于我们</a>
+          <div className="md:hidden bg-white shadow-lg border-t border-gray-100">
+            <div className="container mx-auto px-4 py-3 flex flex-col space-y-2">
+              <a href="#home" className="text-dark hover:text-primary font-medium py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors" onClick={() => setIsMenuOpen(false)}>首页</a>
+              <a href="#features" className="text-dark hover:text-primary font-medium py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors" onClick={() => setIsMenuOpen(false)}>功能</a>
+              <a href="#download" className="text-dark hover:text-primary font-medium py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors" onClick={() => setIsMenuOpen(false)}>下载</a>
+              <a href="#about" className="text-dark hover:text-primary font-medium py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors" onClick={() => setIsMenuOpen(false)}>关于我们</a>
             </div>
           </div>
         )}
@@ -75,9 +87,9 @@ function App() {
           </div>
           <div className="md:w-1/2 flex justify-center">
             <img 
-              src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=mobile%20app%20screenshot%20of%20diary%20app%20with%20ticket%20collection%20interface%2C%20colorful%20and%20cute%20design&image_size=portrait_16_9" 
+              src="https://neeko-copilot.bytedance.net/api/text2image?prompt=mobile%20app%20screenshot%20of%20diary%20app%20with%20ticket%20collection%20interface%2C%20colorful%20and%20cute%20design&size=768x1024" 
               alt="毛球日记App截图" 
-              className="rounded-2xl shadow-2xl max-w-md"
+              className="rounded-2xl shadow-2xl max-w-sm"
             />
           </div>
         </div>
@@ -190,17 +202,17 @@ function App() {
           
           <div className="flex flex-col md:flex-row items-center justify-center gap-8">
             <img 
-              src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=mobile%20app%20screenshot%20of%20diary%20app%20with%20growth%20record%20interface%2C%20colorful%20and%20cute%20design&image_size=portrait_16_9" 
+              src="https://neeko-copilot.bytedance.net/api/text2image?prompt=mobile%20app%20screenshot%20of%20diary%20app%20with%20growth%20record%20interface%2C%20colorful%20and%20cute%20design&size=768x1024" 
               alt="毛球日记App截图" 
               className="rounded-2xl shadow-xl max-w-xs"
             />
             <img 
-              src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=mobile%20app%20screenshot%20of%20diary%20app%20with%20footprint%20map%20interface%2C%20colorful%20and%20cute%20design&image_size=portrait_16_9" 
+              src="https://neeko-copilot.bytedance.net/api/text2image?prompt=mobile%20app%20screenshot%20of%20diary%20app%20with%20footprint%20map%20interface%2C%20colorful%20and%20cute%20design&size=768x1024" 
               alt="毛球日记App截图" 
               className="rounded-2xl shadow-xl max-w-xs"
             />
             <img 
-              src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=mobile%20app%20screenshot%20of%20diary%20app%20with%20time%20capsule%20interface%2C%20colorful%20and%20cute%20design&image_size=portrait_16_9" 
+              src="https://neeko-copilot.bytedance.net/api/text2image?prompt=mobile%20app%20screenshot%20of%20diary%20app%20with%20time%20capsule%20interface%2C%20colorful%20and%20cute%20design&size=768x1024" 
               alt="毛球日记App截图" 
               className="rounded-2xl shadow-xl max-w-xs"
             />
@@ -275,7 +287,7 @@ function App() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center mb-6 md:mb-0">
-              <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=cute%20cartoon%20cat%20logo%20for%20diary%20app&image_size=square" alt="毛球日记" className="h-10 w-10 rounded-full" />
+              <img src="https://neeko-copilot.bytedance.net/api/text2image?prompt=cute%20cartoon%20cat%20logo%20for%20diary%20app&size=512x512" alt="毛球日记" className="h-10 w-10 rounded-full" />
               <h3 className="ml-3 text-2xl font-bold">毛球日记</h3>
             </div>
             
